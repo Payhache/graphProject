@@ -32,6 +32,7 @@
     "vite": "^2.5.0"
   },
   "dependencies": {
-    "chart.js": "^3.5.1"
+    "chart.js": "^3.5.1",
+    "pdf-lib": "^1.16.0"
   }
 }
