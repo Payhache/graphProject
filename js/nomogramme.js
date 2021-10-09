@@ -9,6 +9,7 @@ import { createSample } from "../js/utils/Sample-nommogramme.js";
 import { showHtmlElement, hideHtmlElement } from '../js/utils/Dom.js';
 import { languages } from './available-languages.js';
 import Chart from 'chart.js/auto';
+import {createPdfFromGraph} from '../js/utils/pdf.js'
 
 const DIFFUSION_TIME_IN_BLOOD = 4; // time in hour
 
@@ -20,6 +21,7 @@ const divResult = document.querySelector('#container_result');
 const divNoCalc = document.querySelector('.no_calc_container');
 
 // buttons
+const btnExportPdf = document.querySelector('.export_pdf')
 const btnTranslation = document.querySelectorAll('.btn_translation');
 const btnCalcToxicity = document.querySelector('.calculate_toxicity_btn');
 const btnAddSample = document.querySelector('.add_sample');
@@ -176,6 +178,12 @@ checkBoxAgreement.addEventListener("click", (event) => {
     } else {
         hideHtmlElement(divCalcToxParacetamol);
     }
+})
+
+btnExportPdf.addEventListener("click", () => {
+    console.log(graphCanvas.toDataURL());
+    const pdf = createPdfFromGraph(graph, resultText.textContent, graphCanvas.toDataURL())
+    // console.log(pdf)
 })
 
 // FUNCTIONS
