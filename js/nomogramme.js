@@ -9,7 +9,7 @@ import { createSample } from "../js/utils/Sample-nommogramme.js";
 import { showHtmlElement, hideHtmlElement } from '../js/utils/Dom.js';
 import { languages } from './available-languages.js';
 import Chart from 'chart.js/auto';
-import {createPdfFromGraph} from '../js/utils/pdf.js'
+import {createPdfFromGraphInfos} from '../js/utils/pdf.js'
 
 const DIFFUSION_TIME_IN_BLOOD = 4; // time in hour
 
@@ -181,9 +181,7 @@ checkBoxAgreement.addEventListener("click", (event) => {
 })
 
 btnExportPdf.addEventListener("click", () => {
-    console.log(graphCanvas.toDataURL());
-    const pdf = createPdfFromGraph(graph, resultText.textContent, graphCanvas.toDataURL())
-    // console.log(pdf)
+    const pdf = createPdfFromGraphInfos(graph, resultText.textContent, graphCanvas)
 })
 
 // FUNCTIONS
