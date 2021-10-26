@@ -27,6 +27,7 @@ export default {
     "datePickerLabelSecondSample": "Deuxième date",
     "calculate_toxicity_btn": "Évaluer le risque",
     "calc_dose_submit_btn": "Calcul de la dose en mg/kg",
+    "export_nomogram_pdf_btn": "Exporter en PDF",
 
     // INPUTS
     "calc_dose_patient_weight_input": "Poids du patient (kg)",

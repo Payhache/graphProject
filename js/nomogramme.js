@@ -21,7 +21,7 @@ const divResult = document.querySelector('#container_result');
 const divNoCalc = document.querySelector('.no_calc_container');
 
 // buttons
-const btnExportPdf = document.querySelector('.export_pdf')
+const btnExportPdf = document.querySelector('#export_nomogram_pdf_btn');
 const btnTranslation = document.querySelectorAll('.btn_translation');
 const btnCalcToxicity = document.querySelector('.calculate_toxicity_btn');
 const btnAddSample = document.querySelector('.add_sample');
@@ -181,7 +181,7 @@ checkBoxAgreement.addEventListener("click", (event) => {
 })
 
 btnExportPdf.addEventListener("click", () => {
-    const pdf = createPdfFromGraphInfos(graph, resultText.textContent, graphCanvas)
+    const pdf = createPdfFromGraphInfos(resultText.textContent, graphCanvas, currentLanguage)
 })
 
 // FUNCTIONS
