@@ -55,6 +55,7 @@ export default {
     "graph_riskFactor_line": "100-line",
 
     // OTHERS 
+    "pdf_patient_id": "Patient's ID :",
     "resp_scientifique": "Scientific officer : Dr Manon Launay, PharmD, PhD",
     "resp_dev_web": "Developers : Pierre-Henri Laurency, Maxime Rogues",
 

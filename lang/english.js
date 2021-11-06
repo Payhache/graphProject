@@ -52,6 +52,7 @@ export default {
     "graph_riskFactor_line": "100-line",
 
     // OTHERS 
+    "pdf_patient_id": "Patient's ID :",
     "reference_title": "References : ",
     "contact_title": "HopiTox, who is it ?",
     "resp_scientifique": "Scientific officer : Dr Manon Launay, PharmD, PhD",

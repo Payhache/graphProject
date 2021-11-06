@@ -52,6 +52,7 @@ export default {
     "graph_riskFactor_line": "Ligne de traitement (NAC) si facteur de risque (ligne 100)",
 
     // OTHERS
+    "pdf_patient_id": "Identifiant du patient :",
     "reference_title": "Références : ",
     "contact_title": "HopiTox, qui est-ce ?",
     "resp_scientifique": "Responsable scientifique : Dr Manon Launay, PharmD, PhD",

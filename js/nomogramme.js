@@ -181,7 +181,7 @@ checkBoxAgreement.addEventListener("click", (event) => {
 })
 
 btnExportPdf.addEventListener("click", () => {
-    const pdf = createPdfFromGraphInfos(resultText.textContent, graphCanvas, currentLanguage)
+    const pdf = createPdfFromGraphInfos(graph, resultText.textContent, graphCanvas, currentLanguage)
 })
 
 // FUNCTIONS
