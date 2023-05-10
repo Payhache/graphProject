@@ -5,11 +5,11 @@ export function changeLanguage(language) {
     document.querySelectorAll(".i18n").forEach( element => {
         let textID = element.dataset.text;
         if(regexForResultText.test(element.className)) {
-            element.innerText = "";
+            element.innerHTML = "";
         } else if(element.placeholder != null && element.dataset.text != null) {
             element.placeholder = languages[language][textID];
         } else if(element.dataset.text != null) {
-            element.innerText = languages[language][textID];
+            element.innerHTML = languages[language][textID];
         } 
     })        
 }

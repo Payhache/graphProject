@@ -168,6 +168,7 @@ btnCalcToxicity.addEventListener("click", () => {
     }
     
     showHtmlElement(divResult);
+    showHtmlElement(btnExportPdf);
     resultText.scrollIntoView(true);
     
 })

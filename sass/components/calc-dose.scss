@@ -120,3 +120,27 @@
     text-align: center;
   }
 }
+
+#container_export_pdf_btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+#export_nomogram_pdf_btn {
+  background-color: $primary;
+  color: $white;
+  font-family: $font;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+#pdf_icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline;
+  margin-left: 1rem;
+}
