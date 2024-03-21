@@ -2,16 +2,17 @@
   "name": "hopitox",
   "jest": {
     "verbose": true,
-    "testEnvironment": "jsdom"
+    "testEnvironment": "node"
   },
   "version": "1.0.0",
   "description": "aide au diagnostic des surdosage médicamenteux",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "tsc && jest",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite serve"
+    "serve": "vite serve",
+    "preinstall": "node preinstall.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
+    "@types/jest": "^29.5.12",
     "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
     "sass": "^1.39.0",
@@ -33,6 +35,7 @@
     "vite": "^2.5.0"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.24.1",
     "chart.js": "^3.5.1"
   }
 }

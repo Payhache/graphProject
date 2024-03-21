@@ -8,7 +8,7 @@ import {
   calcDoseParacetamol,
   calcToxicity,
   calcTimeBetweenTwoDatesInHour,
-  convertMicromolesToMilligrames,
+  convertMicromolesToMilligrams,
 } from "../js/utils/Calculs"
 
 test("l'exposant de 4 est -0.30102999566398125", () => {
@@ -41,14 +41,19 @@ test("la dose en mg/kg pour un patient de 50kg prélevé à 20g est de 400mg/kg"
 })
 
 test("1 µmol/l vaut 0.1131 mg/l", () => {
-  expect(convertMicromolesToMilligrames(1)).toBe(0.1131)
+  expect(convertMicromolesToMilligrams(1)).toBe(0.1131)
 })
 
 test("le calcul du nombre d'heures entre deux dates fonctionne", () => {
   let currentDate = new Date(),
     currentDatePlus1H = new Date()
   currentDatePlus1H.setHours(currentDatePlus1H.getHours() + 1)
-  expect(calcTimeBetweenTwoDatesInHour(currentDate, currentDatePlus1H)).toBe(-1)
+  expect(
+    calcTimeBetweenTwoDatesInHour(
+      currentDate.toISOString(),
+      currentDatePlus1H.toISOString()
+    )
+  ).toBe(-1)
 })
 
 test("le risque de toxicité probable à h4 est associé à une concentration à 200", () => {
