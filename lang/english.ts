@@ -1,4 +1,6 @@
-export default {
+import { French } from "./french"
+
+const english: French = {
   // TITLES
   need_dose: "A tool to calculate the dose in mg/kg is available.",
   title_page:
@@ -76,4 +78,6 @@ export default {
 
   //SLOGAN
   slogan: "Only design has changed.",
-};
+}
+
+export default english

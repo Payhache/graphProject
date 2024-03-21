@@ -1,4 +1,4 @@
-export default {
+const french = {
   // TITLES
   need_dose: "Il est possible de calculer la dose en mg/kg",
   title_page: "Evaluation de la toxicité du paracetamol",
@@ -80,4 +80,7 @@ export default {
 
   //SLOGAN
   slogan: "Rien n'a changé, sauf le design.",
-};
+}
+
+export type French = typeof french
+export default french
