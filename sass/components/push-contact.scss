@@ -1,21 +1,24 @@
+@use "../breakpoints";
+@use "../variables";
+
 .push-contact {
-  background-color: $primary;
+  background-color: variables.$primary;
   padding: 4rem 0;
   margin-bottom: 5rem;
   .container {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    @include tablet {
+    @include breakpoints.tablet {
       flex-direction: column;
     }
   }
   &__text {
     display: flex;
     flex-direction: column;
-    color: $white;
+    color: variables.$white;
     width: 70rem;
-    @include tablet {
+    @include breakpoints.tablet {
       margin-bottom: 1.6rem;
       width: 100%;
     }
@@ -28,10 +31,10 @@
     line-height: 2.5rem;
   }
   &__link {
-    background-color: $white;
+    background-color: variables.$white;
     text-decoration: none;
-    color: $primary;
-    font-family: $font;
+    color: variables.$primary;
+    font-family: variables.$font;
     font-size: 1.5rem;
     padding: 1rem 3rem;
     border: none;

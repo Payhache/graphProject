@@ -1,18 +1,20 @@
+@use "breakpoints";
+
 .container {
   margin: 0 auto;
   width: 100%;
 
-  @include phone() {
+  @include breakpoints.phone() {
     max-width: 90vw;
   }
-  @include phone-up() {
-    max-width: $phone - (20px * 2);
+  @include breakpoints.phone-up() {
+    max-width: breakpoints.$phone - (20px * 2);
   }
-  @include tablet-up() {
-    max-width: $tablet - (30px * 2);
+  @include breakpoints.tablet-up() {
+    max-width: breakpoints.$tablet - (30px * 2);
   }
-  @include desktop-up() {
-    max-width: $desktop;
+  @include breakpoints.desktop-up() {
+    max-width: breakpoints.$desktop;
   }
 }
 
