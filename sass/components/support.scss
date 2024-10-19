@@ -1,10 +1,13 @@
+@use "../breakpoints";
+@use "../variables";
+
 .supports {
-  background-color: $secondary-10;
+  background-color: variables.$secondary-10;
   padding: 4rem 5rem;
   border-radius: 1rem;
   margin: 4rem 0;
   text-align: center;
-  @include phone {
+  @include breakpoints.phone {
     padding: 4rem 2.5rem;
   }
 

@@ -1,9 +1,11 @@
+@use "variables";
+
 .error {
   color: red;
 }
 
 .success {
-  color: $secondary;
+  color: variables.$secondary;
 }
 
 .hidden {

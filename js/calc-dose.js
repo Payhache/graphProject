@@ -1,6 +1,7 @@
 import * as Calculs from './utils/Calculs.js';
 import {toggleClassNames, showHtmlElement, getSuccessOrErrorClass} from '../js/utils/Dom.js';
 import { languages } from './available-languages.js'
+import {saveDoseResult} from "./firebase";
 
 const DOSE_VALUE_MAX = 150;
 
@@ -28,6 +29,12 @@ btnCalcDose.addEventListener("click", () => {
     toggleClassNames(pResultDose, classNameResult);
     showHtmlElement(pResultDose);
     displayDoseResult(result);
+    const dataToSave = {
+       patientWeight: inputSubjectWeight.value ,
+       patientHypotheticDose: inputHypotheticDose.value,
+        calculationResult: result,
+    }
+    saveDoseResult(dataToSave);
 })
 
 function calcParacetamolDose() {

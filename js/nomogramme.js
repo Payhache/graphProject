@@ -10,6 +10,14 @@ import { showHtmlElement, hideHtmlElement } from '../js/utils/Dom.js';
 import { languages } from './available-languages.js';
 import Chart from 'chart.js/auto';
 
+
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, push } from 'firebase/database';
+import { getAuth, signInAnonymously } from "firebase/auth";
+import {saveToxicityResult} from "./firebase";
+
+
+
 const DIFFUSION_TIME_IN_BLOOD = 4; // time in hour
 const MAX_TIME_AFTER_INGESTION = 24 // time in hour
 
@@ -159,6 +167,14 @@ btnCalcToxicity.addEventListener("click", () => {
         const toxicities = calcToxicities(dataToAnalize.timeAfterIngestion);
         compareToxicities(toxicities, dataToAnalize);
         addDataToGraph(graph, dataForGraph);
+
+        const dataToSave = {
+            ingestionTimes: ingestionTimes,
+            paracetamolConcentrations: paracetamolConcentrations,
+            toxicities: toxicities
+        };
+
+        saveToxicityResult(dataToSave);
     }
     
     if(!isValidTimeAfterIngestion(ingestionTimes)) { 

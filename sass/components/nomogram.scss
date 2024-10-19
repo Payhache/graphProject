@@ -1,9 +1,12 @@
+@use "../breakpoints";
+@use "../variables";
+
 .nomogram {
-  background-color: $secondary-10;
+  background-color: variables.$secondary-10;
   padding: 4rem 5rem;
   border-radius: 1rem;
   margin: 4rem 0;
-  @include phone {
+  @include breakpoints.phone {
     padding: 4rem 2.5rem;
   }
 
@@ -36,22 +39,22 @@
     margin-bottom: 2rem;
     display: flex;
     width: 100%;
-    @include tablet {
+    @include breakpoints.tablet {
       flex-direction: column;
     }
 
     input {
       width: 50rem;
-      font-family: $font;
+      font-family: variables.$font;
       font-size: 1.5rem;
       margin-left: 3rem;
       padding: 1rem;
       border: none;
       border-radius: .5rem;
-      @include desktop {
+      @include breakpoints.desktop {
         width: 30rem;
       }
-      @include tablet {
+      @include breakpoints.tablet {
         margin-left: 0;
         width: auto;
         margin-bottom: 1rem;
@@ -71,9 +74,9 @@
   }
 
   button {
-    background-color: $primary;
-    color: $white;
-    font-family: $font;
+    background-color: variables.$primary;
+    color: variables.$white;
+    font-family: variables.$font;
     font-size: 1.5rem;
     padding: 1rem 3rem;
     border: none;

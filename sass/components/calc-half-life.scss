@@ -1,11 +1,14 @@
+@use "../breakpoints";
+@use "../variables";
+
 .calc-half-life {
-  background-color: $secondary-10;
+  background-color: variables.$secondary-10;
   padding: 4rem 5rem;
   border-radius: 1rem;
   margin: 4rem 0;
   display: flex;
   flex-direction: column;
-  @include phone {
+  @include breakpoints.phone {
     padding: 4rem 2.5rem;
   }
 
@@ -21,19 +24,19 @@
     justify-content: space-between;
     margin-bottom: 2.5rem;
     width: 100%;
-    @include tablet {
+    @include breakpoints.tablet {
       flex-direction: column;
     }
 
     input {
       width: 90%;
       margin-top: 1.3rem;
-      font-family: $font;
+      font-family: variables.$font;
       font-size: 1.5rem;
       padding: 1rem;
       border: none;
       border-radius: .5rem;
-      box-shadow: 1px 1px 8px 1px rgba($secondary-10, 0.25);
+      box-shadow: 1px 1px 8px 1px rgba(variables.$secondary-10, 0.25);
     }
   }
 
@@ -43,9 +46,9 @@
     margin-bottom: 1.5rem;
 
     button {
-      background-color: $primary;
-      color: $white;
-      font-family: $font;
+      background-color: variables.$primary;
+      color: variables.$white;
+      font-family: variables.$font;
       font-size: 1.5rem;
       padding: 1rem 3rem;
       border: none;
@@ -55,7 +58,7 @@
   }
 
   .first-date, .first-concentration, .second-concentration, .second-date {
-    @include tablet {
+    @include breakpoints.tablet {
       margin-bottom: 1.5rem;
     }
   }

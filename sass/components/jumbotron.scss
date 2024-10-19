@@ -1,7 +1,10 @@
+@use "../breakpoints";
+@use "../variables";
+
 .jumbotron {
   padding: 10rem 0;
-  background-color: $secondary-10;
-  @include tablet {
+  background-color: variables.$secondary-10;
+  @include breakpoints.tablet {
     padding: 3rem 0;
   }
 
@@ -9,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include tablet {
+    @include breakpoints.tablet {
       flex-direction: column;
     }
   }
@@ -19,7 +22,7 @@
 
     img {
       width: 40rem;
-      @include tablet {
+      @include breakpoints.tablet {
         width: 100%;
         // TODO activate when slogan is removed
         // margin-bottom: 3rem; A REMETTRE QUAND SLOGAN ENLEVE 
@@ -32,7 +35,7 @@
     text-align: center;
     font-size: 1.9rem;
     font-weight: bold;
-    @include tablet {
+    @include breakpoints.tablet {
       margin-bottom: 3rem;
       font-size: 1.5rem;
       margin-top: 0.5rem;
@@ -41,7 +44,7 @@
 
   &__text {
     width: 70rem;
-    @include tablet {
+    @include breakpoints.tablet {
       width: 100%;
     }
   }
