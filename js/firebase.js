@@ -17,9 +17,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const resultsRef = ref(database, 'calc/toxicity');
+const toxicityRef = ref(database, 'calc/toxicity');
+const doseRef = ref(database, 'calc/dose');
 
 
 export function saveToxicityResult(result) {
-    push(resultsRef, result);
+    push(toxicityRef, result);
+}
+
+export function saveDoseResult(result) {
+    push(doseRef, result);
 }

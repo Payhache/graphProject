@@ -168,13 +168,13 @@ btnCalcToxicity.addEventListener("click", () => {
         compareToxicities(toxicities, dataToAnalize);
         addDataToGraph(graph, dataForGraph);
 
-        const newResult = {
+        const dataToSave = {
             ingestionTimes: ingestionTimes,
             paracetamolConcentrations: paracetamolConcentrations,
             toxicities: toxicities
         };
 
-        saveToxicityResult(newResult);
+        saveToxicityResult(dataToSave);
     }
     
     if(!isValidTimeAfterIngestion(ingestionTimes)) { 
