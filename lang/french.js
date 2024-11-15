@@ -35,6 +35,7 @@ export default {
   datePickerLabelSecondSample: "Deuxième date",
   calculate_toxicity_btn: "Évaluer le risque",
   calc_dose_submit_btn: "Calcul de la dose en mg/kg",
+  export_nomogram_pdf_btn: 'Exporter le résultat en PDF <img id="pdf_icon" src="img\\pdf-file.png" alt="icône PDF">',
 
   // INPUTS
   calc_dose_patient_weight_input: "Poids du patient (kg)",
@@ -65,6 +66,7 @@ export default {
     "Ligne de traitement (NAC) si facteur de risque (ligne 100)",
 
   // OTHERS
+  pdf_patient_id: "Identifiant du patient :",
   reference_title: "Références : ",
   contact_title: "HopiTox, qui est-ce ?",
   resp_scientifique: "Responsable scientifique : Dr Manon Launay, PharmD, PhD",

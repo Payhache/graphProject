@@ -9,6 +9,7 @@ import { createSample } from "../js/utils/Sample-nommogramme.js";
 import { showHtmlElement, hideHtmlElement } from '../js/utils/Dom.js';
 import { languages } from './available-languages.js';
 import Chart from 'chart.js/auto';
+import {createPdfFromGraphInfos} from '../js/utils/pdf.js'
 
 
 import { initializeApp } from 'firebase/app';
@@ -29,6 +30,7 @@ const divResult = document.querySelector('#container_result');
 const divNoCalc = document.querySelector('.nomogram__form');
 
 // buttons
+const btnExportPdf = document.querySelector('#export_nomogram_pdf_btn');
 const btnTranslation = document.querySelectorAll('.translation__btn');
 const btnCalcToxicity = document.querySelector('.nomogram__submit');
 const btnAddSample = document.querySelector('.nomogram__btn-add');
@@ -183,6 +185,7 @@ btnCalcToxicity.addEventListener("click", () => {
     }
     
     showHtmlElement(divResult);
+    showHtmlElement(btnExportPdf);
     resultText.scrollIntoView(true);
     
 })
@@ -193,6 +196,10 @@ checkBoxAgreement.addEventListener("click", (event) => {
     } else {
         hideHtmlElement(divCalcToxParacetamol);
     }
+})
+
+btnExportPdf.addEventListener("click", () => {
+    const pdf = createPdfFromGraphInfos(graph, resultText.textContent, graphCanvas, currentLanguage)
 })
 
 // FUNCTIONS
@@ -209,7 +216,7 @@ function clearDataGraph() {
 }
 
 function isValidTimeAfterIngestion(array) {
-     return array.every(num => num >= DIFFUSION_TIME_IN_BLOOD && num <= MAX_TIME_AFTER_INGESTION); 
+     return array.every(num => num >= DIFFUSION_TIME_IN_BLOOD && num <= MAX_TIME_AFTER_INGESTION);
 }
 
 function calcToxicities(timeAfterIngestion) {

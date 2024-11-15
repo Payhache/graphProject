@@ -28,6 +28,7 @@ export default {
     "datePickerLabelSecondSample": "Date and time of the second sample",
     "calculate_toxicity_btn": "Risk assessment",
     "calc_dose_submit_btn": "Calculate the dose in mg/kg",
+    "export_nomogram_pdf_btn": 'Export result in PDF <img id="pdf_icon" src="img\\pdf-file.png" alt="icône PDF">',
 
     // INPUTS
     "calc_dose_patient_weight_input": "Patient's weight (kg)",
@@ -54,6 +55,7 @@ export default {
     "graph_riskFactor_line": "100-line",
 
     // OTHERS 
+    "pdf_patient_id": "Patient's ID :",
     "resp_scientifique": "Scientific officer : Dr Manon Launay, PharmD, PhD",
     "resp_dev_web": "Developers : Pierre-Henri Laurency, Maxime Rogues",
 

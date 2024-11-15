@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "chart.js": "^3.5.1",
-    "firebase": "^10.14.1"
+    "firebase": "^10.14.1",
+    "pdf-lib": "^1.16.0"
   }
 }
