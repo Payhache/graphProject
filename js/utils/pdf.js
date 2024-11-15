@@ -83,7 +83,7 @@ export async function createPdfFromGraphInfos(graph, result, canvas, currentLang
 
   // Concentration en mg/L au dernier prélèvement
   // TODO à traduire si on le garde
-  let lastPatientConcentration = document.getElementsByClassName("interval_paracetamol_concentration")[document.getElementsByClassName("interval_paracetamol_concentration").length - 1].value;
+  let lastPatientConcentration = document.getElementsByClassName("nomogram__interval-paracetamol-concentration")[document.getElementsByClassName("nomogram__interval-paracetamol-concentration").length - 1].value;
   page.drawText("Concentration de " + lastPatientConcentration + " mg/L de sang", {
     x: width - 430 ,
     y: height - 300,
