@@ -1,0 +1,26 @@
+@use "../breakpoints";
+@use "../variables";
+
+.supports {
+  background-color: variables.$secondary-10;
+  padding: 4rem 5rem;
+  border-radius: 1rem;
+  margin: 4rem 0;
+  text-align: center;
+  @include breakpoints.phone {
+    padding: 4rem 2.5rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.logo_support {
+  width: 200px;
+  height: 90px;
+  margin: 1rem;
+}

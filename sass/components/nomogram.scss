@@ -1,7 +1,7 @@
 @use "../breakpoints";
 @use "../variables";
 
-.calc-dose {
+.nomogram {
   background-color: variables.$secondary-10;
   padding: 4rem 5rem;
   border-radius: 1rem;
@@ -16,6 +16,17 @@
     margin-bottom: 2rem;
     text-align: center;
   }
+
+  #agreement {
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  &__risk {
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+  }
+
 
   &__form {
     display: flex;
@@ -40,7 +51,6 @@
       padding: 1rem;
       border: none;
       border-radius: .5rem;
-      box-shadow: 1px 1px 8px 1px rgba(variables.$secondary-10, 0.25);
       @include breakpoints.desktop {
         width: 30rem;
       }
@@ -50,6 +60,12 @@
         margin-bottom: 1rem;
       }
     }
+  }
+
+  &__btn-add {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   &__button {
@@ -73,26 +89,14 @@
     text-align: center;
   }
 }
-#container_export_pdf_btn {
+
+.nomogram-result, .nomogram-alert {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-#export_nomogram_pdf_btn {
-  background-color: $primary;
-  color: $white;
-  font-family: $font;
-  font-size: 1.5rem;
-  padding: 1rem 3rem;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer;
-}
-
-#pdf_icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: inline;
-  margin-left: 1rem;
+  padding-bottom: 3rem;
+  & > p {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+  }
 }

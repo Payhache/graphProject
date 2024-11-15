@@ -1,14 +1,15 @@
 import * as Calculs from './utils/Calculs.js';
 import {toggleClassNames, showHtmlElement, getSuccessOrErrorClass} from '../js/utils/Dom.js';
 import { languages } from './available-languages.js'
+import {saveDoseResult} from "./firebase";
 
 const DOSE_VALUE_MAX = 150;
 
-const inputHypotheticDose = document.querySelector('.subject_hypothetic_dosis');
-const inputSubjectWeight = document.querySelector('.subject_weight');
+const inputHypotheticDose = document.querySelector('.calc-dose__hypothetic_dosis');
+const inputSubjectWeight = document.querySelector('.calc-dose__weight');
 
-const btnCalcDose = document.querySelector('.calc_dose_paracetamol');
-const pResultDose = document.querySelector('.result_calc_dose_paracetamol');
+const btnCalcDose = document.querySelector('.calc-dose__btn');
+const pResultDose = document.querySelector('.calc-dose__result');
 
 const inputs = [inputHypotheticDose, inputSubjectWeight]
 
@@ -28,6 +29,12 @@ btnCalcDose.addEventListener("click", () => {
     toggleClassNames(pResultDose, classNameResult);
     showHtmlElement(pResultDose);
     displayDoseResult(result);
+    const dataToSave = {
+       patientWeight: inputSubjectWeight.value ,
+       patientHypotheticDose: inputHypotheticDose.value,
+        calculationResult: result,
+    }
+    saveDoseResult(dataToSave);
 })
 
 function calcParacetamolDose() {

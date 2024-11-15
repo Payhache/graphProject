@@ -11,20 +11,29 @@ import { languages } from './available-languages.js';
 import Chart from 'chart.js/auto';
 import {createPdfFromGraphInfos} from '../js/utils/pdf.js'
 
-const DIFFUSION_TIME_IN_BLOOD = 4; // time in hour
 
-const resultText = document.querySelector('.result_text');
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, push } from 'firebase/database';
+import { getAuth, signInAnonymously } from "firebase/auth";
+import {saveToxicityResult} from "./firebase";
+
+
+
+const DIFFUSION_TIME_IN_BLOOD = 4; // time in hour
+const MAX_TIME_AFTER_INGESTION = 24 // time in hour
+
+const resultText = document.querySelector('.nomogram-result__text');
 // divs
 const divCalcToxParacetamol = document.querySelector('#calculate_toxicity_div');
-const divMsgError = document.querySelector('.alertBadData');
+const divMsgError = document.querySelector('.nomogram-alert');
 const divResult = document.querySelector('#container_result');
-const divNoCalc = document.querySelector('.no_calc_container');
+const divNoCalc = document.querySelector('.nomogram__form');
 
 // buttons
 const btnExportPdf = document.querySelector('#export_nomogram_pdf_btn');
-const btnTranslation = document.querySelectorAll('.btn_translation');
-const btnCalcToxicity = document.querySelector('.calculate_toxicity_btn');
-const btnAddSample = document.querySelector('.add_sample');
+const btnTranslation = document.querySelectorAll('.translation__btn');
+const btnCalcToxicity = document.querySelector('.nomogram__submit');
+const btnAddSample = document.querySelector('.nomogram__btn-add');
 btnCalcToxicity.disabled = true
 btnAddSample.disabled = true
 function disableBtnIfNeeded () {
@@ -33,13 +42,13 @@ function disableBtnIfNeeded () {
     btnCalcToxicity.disabled = disabled
 }
 
-const noCalcInputs = [...document.querySelector('.no_calc_container').querySelectorAll('input')]
+const noCalcInputs = [...document.querySelector('.nomogram__form').querySelectorAll('input')]
 noCalcInputs.forEach(input => input.addEventListener('input', disableBtnIfNeeded))
 
 
 // interval inputs
-let ingestionIntervals = document.querySelectorAll('.interval_after_ingestion');
-let paracetamolConcentrationIntervals = document.querySelectorAll('.interval_paracetamol_concentration');
+let ingestionIntervals = document.querySelectorAll('.nomogram__interval-after-ingestion');
+let paracetamolConcentrationIntervals = document.querySelectorAll('.nomogram__interval-paracetamol-concentration');
 
 // checkboxs
 const checkBoxPatientGotRisk = document.querySelector('#patient_got_risk');
@@ -136,7 +145,7 @@ btnTranslation.forEach(btn => {
 });
 
 function checkBlankValues () {
-    const inputs = document.querySelector('.no_calc_container').querySelectorAll('input')
+    const inputs = document.querySelector('.nomogram__form').querySelectorAll('input')
     const isWithBlankValues = [...inputs].some(({value}) => value === '')
     return isWithBlankValues
 }
@@ -146,8 +155,8 @@ btnAddSample.addEventListener("click", () => {
     btnAddSample.disabled = true
     btnCalcToxicity.disabled = true
     divNoCalc.appendChild(createSample(disableBtnIfNeeded));
-    ingestionIntervals = document.querySelectorAll('.interval_after_ingestion');
-    paracetamolConcentrationIntervals = document.querySelectorAll('.interval_paracetamol_concentration');
+    ingestionIntervals = document.querySelectorAll('.nomogram__interval-after-ingestion');
+    paracetamolConcentrationIntervals = document.querySelectorAll('.nomogram__interval-paracetamol-concentration');
 });
 
 btnCalcToxicity.addEventListener("click", () => {
@@ -160,6 +169,14 @@ btnCalcToxicity.addEventListener("click", () => {
         const toxicities = calcToxicities(dataToAnalize.timeAfterIngestion);
         compareToxicities(toxicities, dataToAnalize);
         addDataToGraph(graph, dataForGraph);
+
+        const dataToSave = {
+            ingestionTimes: ingestionTimes,
+            paracetamolConcentrations: paracetamolConcentrations,
+            toxicities: toxicities
+        };
+
+        saveToxicityResult(dataToSave);
     }
     
     if(!isValidTimeAfterIngestion(ingestionTimes)) { 
@@ -199,7 +216,7 @@ function clearDataGraph() {
 }
 
 function isValidTimeAfterIngestion(array) {
-     return array.every(num => num >= DIFFUSION_TIME_IN_BLOOD); 
+     return array.every(num => num >= DIFFUSION_TIME_IN_BLOOD && num <= MAX_TIME_AFTER_INGESTION);
 }
 
 function calcToxicities(timeAfterIngestion) {
@@ -229,6 +246,7 @@ function compareToxicities(toxicities, dataToAnalize) {
     if (!messageId) {
         return
     }
+    resultText.dataset.result = messageId;
     resultText.textContent = languages[currentLanguage][messageId].replace('resultToReplace', dataToAnalize.timeAfterIngestion);
 }
 
@@ -241,7 +259,7 @@ function createCoordinates(array1, array2) {
 }
 
 
-function getNonBlankValues(nodeList) {
+export function getNonBlankValues(nodeList) {
     return [...nodeList]
         .filter(input => input.value !== '')
         .map(input => +input.value);

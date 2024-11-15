@@ -4,15 +4,15 @@ import { languages } from './available-languages.js';
 
 const OPTIMAL_ELIMINATION_TIME = 4; // time in hour
 
-const pResult = document.querySelector('.result_calc_half_life');
+const pResult = document.querySelector('.calc-half-life__result');
 
-const inputParacetamolFirstSample = document.querySelector('.first_paracetamol_concentration');
-const inputParacetamolSecondSample = document.querySelector('.second_paracetamol_concentration');
+const inputParacetamolFirstSample = document.querySelector('.first-concentration__number');
+const inputParacetamolSecondSample = document.querySelector('.second-concentration__number');
 
-const datePickerFirstSample = document.querySelector('.first_sampling_time');
-const datePickerSecondSample = document.querySelector('.second_sampling_time');
+const datePickerFirstSample = document.querySelector('.first-date__time');
+const datePickerSecondSample = document.querySelector('.second-date__time');
 
-const btnCalcHalfLife = document.querySelector('.calc_half_life');
+const btnCalcHalfLife = document.querySelector('.calc-half-life__submit');
 
 btnCalcHalfLife.addEventListener('click', () => {
     const duree = Calculs.calcTimeBetweenTwoDatesInHour(datePickerSecondSample.value, datePickerFirstSample.value)

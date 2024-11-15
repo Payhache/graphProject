@@ -1,15 +1,16 @@
-@import 'variables';
-@import "breakpoints";
-@import "global";
-@import "reset";
-@import "components/menu";
-@import "components/jumbotron";
-@import "components/calc-dose";
-@import "components/calc-demi-vie";
-@import "components/push-contact";
-@import "components/ref";
-@import "utilities";
-
+@use "variables";
+@use "breakpoints";
+@use "reset";
+@use "components/menu";
+@use "components/jumbotron";
+@use "components/calc-dose";
+@use "components/calc-half-life";
+@use "components/push-contact";
+@use "components/footer";
+@use "components/nomogram";
+@use "components/support";
+@use "utilities";
+@use "global";
 
 /*- 1rem = 10px - but default font size stay unchanged -*/
 html {
@@ -18,9 +19,9 @@ html {
   overflow-x: hidden;
 }
 
-body{
-  font-family: $font;
+body {
+  font-family: variables.$font;
   font-size: 1.6rem;
   font-weight: 500;
-  color: $primary;
+  color: variables.$primary;
 }

@@ -1,0 +1,8 @@
+export const FIREBASE_API_KEY = 'AIzaSyC2vBGcLRsxUa3S-FFpsDKdOqF19OYReuw'
+export const FIREBASE_AUTH_DOMAIN = 'hopitox-cb93a.firebaseapp.com'
+export const FIREBASE_DATABASE_URL = 'https://hopitox-cb93a-default-rtdb.europe-west1.firebasedatabase.app'
+export const FIREBASE_PROJECT_ID = 'hopitox-cb93a'
+export const FIREBASE_STORAGE_BUCKET = 'hopitox-cb93a.appspot.com'
+export const FIREBASE_MESSAGING_SENDER_ID = '417357271332'
+export const FIREBASE_APP_ID = '1:417357271332:web:ecbe0623baa62fdeeb23b1'
+export const FIREBASE_MEASUREMENT_ID = 'G-FV1NEKV7RQ'

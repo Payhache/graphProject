@@ -1,216 +1,347 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJ3TK8C09Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'G-HEJ8Y5PWM2');
-    </script>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEJ8Y5PWM2"></script>
     <!-- Primary Meta Tags -->
-    <title> HopiTox - Nomogramme dynamique de Rumack-Matthew </title>
-    <meta name="title" content="HopiTox - Nomogramme dynamique de Rumack-Matthew">
-    <meta name="description"
-          content=" Utilisation d'un nomogramme dynamique pour évaluer le risque toxique en fonction de la paracétamolémie.">
+    <title>HopiTox - Nomogramme dynamique de Rumack-Matthew</title>
+    <meta
+      name="title"
+      content="HopiTox - Nomogramme dynamique de Rumack-Matthew"
+    />
+    <meta
+      name="description"
+      content=" Utilisation d'un nomogramme dynamique pour évaluer le risque toxique en fonction de la paracétamolémie."
+    />
 
     <!-- Open Graph / Facebook / Linkedin -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.hopitox.com/">
-    <meta property="og:title" content="HopiTox - Nomogramme dynamique de Rumack-Matthew">
-    <meta property="og:description"
-          content=" Utilisation d'un nomogramme dynamique pour évaluer le risque toxique en fonction de la paracétamolémie.">
-    <meta property="og:image" content="img/hopitox_thumbnail.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.hopitox.com/" />
+    <meta
+      property="og:title"
+      content="HopiTox - Nomogramme dynamique de Rumack-Matthew"
+    />
+    <meta
+      property="og:description"
+      content=" Utilisation d'un nomogramme dynamique pour évaluer le risque toxique en fonction de la paracétamolémie."
+    />
+    <meta property="og:image" content="img/hopitox_thumbnail.png" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="img/hopitox_thumbnail.png">
-    <meta property="twitter:url" content="https://www.hopitox.com/">
-    <meta property="twitter:title" content="HopiTox - Nomogramme dynamique de Rumack-Matthew">
-    <meta property="twitter:description"
-          content=" Utilisation d'un nomogramme dynamique pour évaluer le risque toxique en fonction de la paracétamolémie.">
-    <meta property="twitter:image" content="">
-</head>
-<body>
-<header>
-    <div class="translation">
-        <button class="btn_translation" data-language="fr">Français</button>
-        <button class="btn_translation" data-language="en">English</button>
-    </div>
-    <div class="navigation__mobile container">
+    <meta property="twitter:card" content="img/hopitox_thumbnail.png" />
+    <meta property="twitter:url" content="https://www.hopitox.com/" />
+    <meta
+      property="twitter:title"
+      content="HopiTox - Nomogramme dynamique de Rumack-Matthew"
+    />
+    <meta
+      property="twitter:description"
+      content=" Utilisation d'un nomogramme dynamique pour évaluer le risque toxique en fonction de la paracétamolémie."
+    />
+    <meta property="twitter:image" content="" />
+  </head>
+  <body>
+    <header>
+      <div class="translation">
+        <button class="translation__btn" data-language="fr">Français</button>
+        <button class="translation__btn" data-language="en">English</button>
+      </div>
+      <div class="navigation__mobile container">
         <div class="navigation__icon" id="btn-burger">
-            <img alt="menu-burger" src="img/menu-burger.svg">
+          <img alt="menu-burger" src="img/menu-burger.svg" />
         </div>
-    </div>
-
-    <nav class="navigation container" id="myNav">
+      </div>
+      <nav class="navigation container" id="myNav">
         <div class="navigation__container">
-            <a href="#dose" class="navigation__link i18n" data-text="item_first">Dose</a>
-            <a href="#nomogram" class="navigation__link i18n" data-text="item_second">Nomogramme</a>
-            <a href="#container_calc_half_life" class="navigation__link i18n" data-text="item_third">Demi-vie</a>
+          <a href="#dose" class="navigation__link i18n" data-text="item_first"
+            >Dose</a
+          >
+          <a
+            href="#nomogram"
+            class="navigation__link i18n"
+            data-text="item_second"
+            >Nomogramme</a
+          >
+          <a
+            href="#container_calc_half_life"
+            class="navigation__link i18n"
+            data-text="item_third"
+            >Demi-vie</a
+          >
+          <a
+            href="#supports"
+            class="navigation__link i18n"
+            data-text="item_fourth"
+            >soutient</a
+          >
         </div>
-    </nav>
-</header>
-<main>
-    <section class="jumbotron" id="jumbotron">
+      </nav>
+    </header>
+    <main>
+      <section class="jumbotron" id="jumbotron">
         <div class="container">
-            <div class="jumbotron__image">
-                <img src="img/Logo-Hopitox-v1.png" alt="paracetamol" id="hopitox_logo">
-                <p class="logo_slogan i18n" data-text="slogan"></p>
-            </div>
-            <div class="jumbotron__text">
-                <h2 class="jumbotron__text__title i18n" data-text="title_question"></h2>
-                <p class="jumbotron__text__description sub_title i18n" data-text="title_sub_title"></p>
-            </div>
+          <div class="jumbotron__image">
+            <img src="img/Logo-Hopitox-v1.png" alt="paracetamol" />
+            <p class="jumbotron__slogan i18n" data-text="slogan"></p>
+          </div>
+          <div class="jumbotron__text">
+            <h2 class="jumbotron__title i18n" data-text="title_question"></h2>
+            <p
+              class="jumbotron__description sub_title i18n"
+              data-text="title_sub_title"
+            ></p>
+          </div>
         </div>
-    </section>
-    <section class="container" id="dose">
+      </section>
+      <section class="container" id="dose">
         <div class="calc-dose">
-            <h3 class="i18n calc-dose__title" data-text="calc_dose_title"> Calcul de la dose en mg/kg</h3>
-            <div class="calc-dose__form">
-                <div class="calc-dose__form__input">
-                    <input class="subject_weight i18n" type="number" data-text="calc_dose_patient_weight_input">
-                    <input class="subject_hypothetic_dosis i18n" type="number"
-                           data-text="calc_dose_paracetamol_dose_input">
-                </div>
-                <button class="calc_dose_paracetamol i18n" data-text="calc_dose_submit_btn" type="submit"> Calcul de la
-                    dose en
-                    mg/kg
-                </button>
-                <p class="result_calc_dose_paracetamol" data-text="calc_dose_result"></p>
+          <h3 class="i18n calc-dose__title" data-text="calc_dose_title">
+            Calcul de la dose en mg/kg
+          </h3>
+          <div class="calc-dose__form">
+            <div class="calc-dose__input">
+              <input
+                class="calc-dose__weight i18n"
+                type="number"
+                data-text="calc_dose_patient_weight_input"
+              />
+              <input
+                class="calc-dose__hypothetic_dosis i18n"
+                type="number"
+                data-text="calc_dose_paracetamol_dose_input"
+              />
             </div>
+            <button
+              class="calc-dose__btn i18n"
+              data-text="calc_dose_submit_btn"
+              type="submit"
+            >
+              Calcul de la dose en mg/kg
+            </button>
+            <p class="calc-dose__result" data-text="calc_dose_result"></p>
+          </div>
         </div>
-    </section>
-    <section class="container" id="nomogram">
-        <div class="calc-dose">
-            <h3 class="i18n calc-dose__title" data-text="nomogram_title"></h3>
-            <div id="agreement" class="visible">
-                <input type="checkbox" data-div="calculate_toxicity_div" name="accept_agreement" id="accept_agreement">
-                <label class="text_agreement i18n" data-text="calculate_toxicity_label" for="accept_agreement"> </label>
+      </section>
+      <section class="container" id="nomogram">
+        <div class="nomogram">
+          <h3 class="i18n nomogram__title" data-text="nomogram_title"></h3>
+          <div id="agreement" class="visible">
+            <input
+              type="checkbox"
+              data-div="calculate_toxicity_div"
+              name="accept_agreement"
+              id="accept_agreement"
+            />
+            <label
+              class="text_agreement i18n"
+              data-text="calculate_toxicity_label"
+              for="accept_agreement"
+            >
+            </label>
+          </div>
+          <div id="calculate_toxicity_div" class="hidden">
+            <div class="nomogram__form">
+              <div class="nomogram__input">
+                <input
+                  class="nomogram__interval-after-ingestion i18n"
+                  type="number"
+                  data-text="calculate_toxicity_ingestion_time"
+                  placeholder=""
+                />
+                <input
+                  class="nomogram__interval-paracetamol-concentration i18n"
+                  type="number"
+                  data-text="calculate_toxicity_paracetamol_concentration"
+                  placeholder="Paracetamol (mg/l)"
+                />
+                <button class="nomogram__btn-add">+</button>
+              </div>
             </div>
-            <div id="calculate_toxicity_div" class="hidden">
-                <div class="no_calc_container calc-dose__form">
-                    <div class="sample_interval_container calc-dose__form__input">
-                        <input class="interval_after_ingestion  i18n" type="number"
-                               data-text="calculate_toxicity_ingestion_time"
-                               placeholder="">
-                        <input class="interval_paracetamol_concentration i18n" type="number"
-                               data-text="calculate_toxicity_paracetamol_concentration"
-                               placeholder="Paracetamol (mg/l)">
-                        <button class="add_sample"> +</button>
-                    </div>
-                </div>
-                <div class="patient_got_risk_container">
-                    <input type="checkbox" name="patient_got_risk" id="patient_got_risk">
-                    <label class="patient_got_risk i18n" data-text="patient_got_risk_label"
-                           for="patient_got_risk"> </label>
-                </div>
-                <div class="calculate_toxicity__button">
-                    <button class="calculate_toxicity_btn i18n" data-text="calculate_toxicity_btn"
-                            type="submit"></button>
-                </div>
+            <div class="nomogram__risk">
+              <input
+                type="checkbox"
+                name="patient_got_risk"
+                id="patient_got_risk"
+              />
+              <label
+                class="nomogram__risk-label i18n"
+                data-text="patient_got_risk_label"
+                for="patient_got_risk"
+              >
+              </label>
             </div>
+            <div class="nomogram__button">
+              <button
+                class="nomogram__submit i18n"
+                data-text="calculate_toxicity_btn"
+                type="submit"
+              ></button>
+            </div>
+          </div>
         </div>
-        <div id="container_result" class="hidden calc-dose-result">
-            <p class="result_text i18n"></p>
+        <div id="container_result" class="hidden nomogram-result">
+          <p class="nomogram-result__text i18n"></p>
         </div>
-        <div id="container_export_pdf_btn">
-            <button id="export_nomogram_pdf_btn" class="hidden i18n" data-text="export_nomogram_pdf_btn"> </button>
+          <div id="container_export_pdf_btn">
+              <button id="export_nomogram_pdf_btn" class="hidden i18n" data-text="export_nomogram_pdf_btn"> </button>
+          </div>
+      </section>
+      <section class="container">
+        <div id="nomogramGraphDiv" class="graphDiv" style="width: 100%; height: 65vh">
+          <canvas class="graph" id="nomogramGraph"></canvas>
         </div>
-
-    </section>
-    <section class="container">
-        <div id="nomogramGraphDiv" class="graphDiv" style="width: 100%; height: 65vh;">
-            <canvas class="graph" id="nomogramGraph"></canvas>
-        </div>
-    </section>
-    <section class="container">
+      </section>
+      <section class="container">
         <div id="container_calc_half_life" class="calc-half-life visible">
-            <h2 class="i18n calc-half-life__title" data-text="title_calc_half_life"></h2>
-            <div class="calc-half-life__row">
-                <div class="first_date_picker">
-                    <label for="first_sampling_time" class="first_sampling_label d_block i18n"
-                           data-text="label_first_sampling_time_half_life"></label>
-                    <input type="datetime-local" class="first_sampling_time" id="first_sampling_time">
-                </div>
-                <div class="first_concentration">
-                    <label class="d_block i18n" for="first_concentration"
-                           data-text="label_first_concentration_half_life"></label>
-                    <input class="first_paracetamol_concentration" type="number" id="first_concentration"
-                           placeholder="Paracetamol (mg/l)">
-                </div>
+          <h2 class="i18n calc-half-life__title" data-text="title_calc_half_life"></h2>
+          <div class="calc-half-life__row">
+            <div class="first-date">
+              <label
+                for="first_sampling_time"
+                class="first-date__label d_block i18n"
+                data-text="label_first_sampling_time_half_life"
+              ></label>
+              <input
+                type="datetime-local"
+                class="first-date__time"
+                id="first_sampling_time"
+              />
             </div>
-            <div class="calc-half-life__row">
-                <div class="second_date_picker">
-                    <label for="second_sampling_time" class="second_sampling_label d_block i18n"
-                           data-text="label_second_sampling_time_half_life"> </label>
-                    <input type="datetime-local" class="second_sampling_time" id="second_sampling_time">
-                </div>
-                <div class="second_concentration">
-                    <label class="d_block i18n" data-text="label_Second_concentration_half_life"
-                           for="second_concentration"></label>
-                    <input class="second_paracetamol_concentration" type="number" id="second_concentration"
-                           placeholder="Paracetamol (mg/l)">
-                </div>
+            <div class="first-concentration">
+              <label
+                class="first-concentration__label d_block i18n"
+                for="first_concentration"
+                data-text="label_first_concentration_half_life"
+              ></label>
+              <input
+                class="first-concentration__number"
+                type="number"
+                id="first_concentration"
+                placeholder="Paracetamol (mg/l)"
+              />
             </div>
-
-            <div class="calc-half-life__button">
-                <button class="calc_half_life i18n" data-text="calculate_half_life"></button>
+          </div>
+          <div class="calc-half-life__row">
+            <div class="second-date">
+              <label
+                for="second_sampling_time"
+                class="second-date__label d_block i18n"
+                data-text="label_second_sampling_time_half_life"
+              >
+              </label>
+              <input
+                type="datetime-local"
+                class="second-date__time"
+                id="second_sampling_time"
+              />
             </div>
-            <div class="result_half_life">
-                <p class="result_calc_half_life i18n hidden" data-text="result_calc_half_life"> Result </p>
+            <div class="second-concentration">
+              <label
+                class="second-concentration__label d_block i18n"
+                data-text="label_Second_concentration_half_life"
+                for="second_concentration"
+              ></label>
+              <input
+                class="second-concentration__number"
+                type="number"
+                id="second_concentration"
+                placeholder="Paracetamol (mg/l)"
+              />
             </div>
+          </div>
+          <div class="calc-half-life__button">
+            <button
+              class="calc-half-life__submit i18n"
+              data-text="calculate_half_life"
+            ></button>
+          </div>
+          <div>
+            <p
+              class="calc-half-life__result i18n hidden"
+              data-text="result_calc_half_life"
+            >
+              Result
+            </p>
+          </div>
         </div>
-    </section>
-    <section class="push-contact">
+      </section>
+      <section class="push-contact">
         <div class="container">
-            <div class="push-contact__text">
-                <h3 class="push-contact__text__title i18n" data-text="contact_title"></h3>
-                <p class="push-contact__text__description i18n" data-text="resp_scientifique"></p>
-                <p class="push-contact__text__description i18n" data-text="resp_dev_web"></p>
-                <p class="push-contact__text__description i18n" data-text="resp_logo"></p>
-            </div>
-            <a href="mailto:contact@hopitox.com" class="push-contact__link i18n button" data-text="contact"></a>
+          <div class="push-contact__text">
+            <h3 class="push-contact__title i18n" data-text="contact_title"></h3>
+            <p
+              class="push-contact__description i18n"
+              data-text="resp_scientifique"
+            ></p>
+            <p
+              class="push-contact__description i18n"
+              data-text="resp_dev_web"
+            ></p>
+            <p class="push-contact__description i18n" data-text="resp_logo"></p>
+          </div>
+          <a
+            href="mailto:contact@hopitox.com"
+            class="push-contact__link i18n button"
+            data-text="contact"
+          ></a>
         </div>
-    </section>
-</main>
-
-<footer>
-    <div class="ref_container container">
-        <p class="title_ref"> Références : </p>
-        <p class="ref">White SJ, Rumack BH. The acetaminophen toxicity equations: "solutions" for acetaminophen toxicity
-            based on the Rumack-Matthew nomogram. Ann Emerg Med. 2005 May;45(5):563-4. doi:
-            10.1016/j.annemergmed.2004.11.033. PMID: 15855961.</p>
-        <p class="ref">Mégarbane B, Oberlin M, Alvarez JC, Balen F, Beaune S, Bédry R, Chauvin A, Claudet I, Danel V,
-            Debaty G, Delahaye A, Deye N, Gaulier JM, Grossenbacher F, Hantson P, Jacobs F, Jaffal K, Labadie M, Labat
-            L, Langrand J, Lapostolle F, Le Conte P, Maignan M, Nisse P, Sauder P, Tournoud C, Vodovar D, Voicu S,
-            Claret PG, Cerf C. Management of pharmaceutical and recreational drug poisoning. Ann Intensive Care. 2020
-            Nov 23;10(1):157. doi: 10.1186/s13613-020-00762-9. PMID: 33226502; PMCID: PMC7683636.</p>
-        <p class="ref">Saint-Marcoux F, Libert F; groupe Suivi thérapeutique pharmacologique de la Société française de
-            pharmacologie et de thérapeutique. Éléments de l'interprétation et du dialogue clinico-biologique pour
-            quelques paramètres usuels de pharmacologie-toxicologie [Practical information for therapeutic drug
-            monitoring of the most common compounds]. Therapie. 2016 Sep;71(4):405-34. French. doi:
-            10.1016/j.therap.2016.01.007. Epub 2016 May 4. PMID: 27203171.</p>
-        <p class="ref">Beer C, Pakravan N, Hudson M, Smith LT, Simpson K, Bateman DN, Thomas SH. Liver unit admission
-            following paracetamol overdose with concentrations below current UK treatment thresholds. QJM. 2007
-            Feb;100(2):93-6. doi: 10.1093/qjmed/hcm003. Epub 2007 Jan 20. PMID: 17237484.</p>
-        <p class="ref">Bateman DN. Paracetamol poisoning: beyond the nomogram. Br J Clin Pharmacol. 2015
-            Jul;80(1):45-50. doi: 10.1111/bcp.12604. Epub 2015 Jun 1. PMID: 26099917; PMCID: PMC4500323.</p>
-    </div>
-    <div class="responsable_container">
-        <p class="resp_scientifique i18n"></p>
-        <p class="resp_dev_web i18n"></p>
-    </div>
-</footer>
-
-<script type="module" src="/js/index.js"></script>
-</body>
+      </section>
+      <section class="supports" id="supports">
+        <h2 class="i18n supports__title" data-text="supports_title"></h2>
+        <img
+          class="logo_support"
+          src="img/logo chu.png"
+          alt="logo CHU Saint-Etienne"
+        />
+        <img class="logo_support" src="img/logo-AFEF.png" alt="logo AFEF" />
+      </section>
+    </main>
+    <footer>
+      <div class="ref container">
+        <p class="ref__title">Références :</p>
+        <p class="ref__text">
+          White SJ, Rumack BH. The acetaminophen toxicity equations: "solutions"
+          for acetaminophen toxicity based on the Rumack-Matthew nomogram. Ann
+          Emerg Med. 2005 May;45(5):563-4. doi:
+          10.1016/j.annemergmed.2004.11.033. PMID: 15855961.
+        </p>
+        <p class="ref__text">
+          Mégarbane B, Oberlin M, Alvarez JC, Balen F, Beaune S, Bédry R,
+          Chauvin A, Claudet I, Danel V, Debaty G, Delahaye A, Deye N, Gaulier
+          JM, Grossenbacher F, Hantson P, Jacobs F, Jaffal K, Labadie M, Labat
+          L, Langrand J, Lapostolle F, Le Conte P, Maignan M, Nisse P, Sauder P,
+          Tournoud C, Vodovar D, Voicu S, Claret PG, Cerf C. Management of
+          pharmaceutical and recreational drug poisoning. Ann Intensive Care.
+          2020 Nov 23;10(1):157. doi: 10.1186/s13613-020-00762-9. PMID:
+          33226502; PMCID: PMC7683636.
+        </p>
+        <p class="ref__text">
+          Saint-Marcoux F, Libert F; groupe Suivi thérapeutique pharmacologique
+          de la Société française de pharmacologie et de thérapeutique. Éléments
+          de l'interprétation et du dialogue clinico-biologique pour quelques
+          paramètres usuels de pharmacologie-toxicologie [Practical information
+          for therapeutic drug monitoring of the most common compounds].
+          Therapie. 2016 Sep;71(4):405-34. French. doi:
+          10.1016/j.therap.2016.01.007. Epub 2016 May 4. PMID: 27203171.
+        </p>
+        <p class="ref__text">
+          Beer C, Pakravan N, Hudson M, Smith LT, Simpson K, Bateman DN, Thomas
+          SH. Liver unit admission following paracetamol overdose with
+          concentrations below current UK treatment thresholds. QJM. 2007
+          Feb;100(2):93-6. doi: 10.1093/qjmed/hcm003. Epub 2007 Jan 20. PMID:
+          17237484.
+        </p>
+        <p class="ref__text">
+          Bateman DN. Paracetamol poisoning: beyond the nomogram. Br J Clin
+          Pharmacol. 2015 Jul;80(1):45-50. doi: 10.1111/bcp.12604. Epub 2015 Jun
+          1. PMID: 26099917; PMCID: PMC4500323.
+        </p>
+      </div>
+    </footer>
+    <script type="module" src="/js/index.js"></script>
+  </body>
 </html>

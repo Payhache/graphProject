@@ -2,7 +2,7 @@ import { changeLanguage } from "./utils/Trads.js";
 import { defaultLanguage } from './available-languages.js'
 
 window.currentLanguage = defaultLanguage;
-const btnTranslation = document.querySelectorAll('.btn_translation');
+const btnTranslation = document.querySelectorAll('.translation__btn');
 
 changeLanguage(currentLanguage);
 
