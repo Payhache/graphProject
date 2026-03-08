@@ -11,8 +11,7 @@
     "test": "tsc && jest",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite serve",
-    "preinstall": "node preinstall.js"
+    "serve": "vite serve"
   },
   "repository": {
     "type": "git",
